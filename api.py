@@ -1,6 +1,10 @@
 from flask import Flask, jsonify, request
 app = Flask(__name__)
 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_ECHO'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/diy-api-python'
+
 all_dogs = {
   "id": 12321,
   "breed": "Golden Retreiver",
