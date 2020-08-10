@@ -11,5 +11,13 @@ class Dog(db.Model):
   lifespan = db.Column(db.String)
   miniature = db.Column(db.Boolean)
 
+  def as_dict(self):
+    return {
+      "id": self.id,
+      "breed": self.breed,
+      "lifespan": self.lifespan,
+      "miniature": self.miniature
+    }
+
   def __repr__(self):
     return f"🐶 Dog\nid: {self.id} \nbreed: {self.breed} \nlifespan: {self.lifespan} \nminiature: {self.miniature}"
